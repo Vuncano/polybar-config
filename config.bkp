@@ -35,12 +35,6 @@ radius = 0
 ; dpi = 96
 
 background = ${colors.background}
-background-3 = #092929
-background-2 = #193f5d
-;background-1 = #3974a3
-background-1 = #044759
-;background-0 = #41abc0
-background-0 = #3699af
 foreground = ${colors.foreground}
 
 line-size = 2pt
@@ -49,11 +43,11 @@ border-size = 0
 border-color = #00000000
 
 padding-left = 0
-padding-right = 3
+padding-right = 0
 
-module-margin = 2
+module-margin = 1
 
-separator = 
+separator = |
 separator-foreground = ${colors.disabled}
 
 font-0 = fixed:pixelsize=9;1
@@ -63,24 +57,16 @@ font-3 = Font Awesome 6 Free:pixelsize=7;2
 font-4 = Font Awesome 6 Free Solid:pixelsize=9;2
 font-5 = Font Awesome 6 Brands:pixelsize=7;2
 
-modules-left = i3 xwindow 
-;modules-center = pacman
-modules-right = pacman pulseaudio memory battery date
+modules-left = i3 xwindow
+modules-center = pacman
+modules-right = pulseaudio memory wlan eth battery date
 
 cursor-click = pointer
 cursor-scroll = ns-resize
 
 enable-ipc = true
 
-; applets
-tray-position = center
-tray-padding = 0
-;tray-background = #80000000
-tray-background = #953974a3
-tray-radius = 8
-;tray-offset-x = 265
-tray-detached = false
-tray-transparent = true
+tray-position = right
 
 ; wm-restack = generic
 ; wm-restack = bspwm
@@ -96,7 +82,7 @@ scroll-down = "#i3.next"
 
   exec = checkupdates | wc -l
   interval = 1000
-  label =  %output%
+  label = Updates: %output%
   format-foreground = $(colors.foreground)
   format-prefix = " "
   
@@ -287,7 +273,7 @@ scroll-down = "#i3.next"
   date-alt = %Y-%m-%d %H:%M:%S
   
   label = %date%
-  ;label-foreground = ${colors.primary}
+  label-foreground = ${colors.primary}
   
 [settings]
 screenchange-reload = true
